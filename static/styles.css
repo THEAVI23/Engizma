@@ -1,0 +1,258 @@
+:root {
+    --primary-color: #e1306c; /* Instagram pink */
+    --secondary-color: #fcb045; /* Instagram orange */
+    --background-color: #000000; /* Black background */
+    --text-color: #ffffff; /* White text */
+    --card-background: #1a1a1a; /* Dark gray card background */
+    --gradient-color: linear-gradient(45deg, #fcb045, #fd1d1d, #833ab4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--gradient-color);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.form-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.file-input-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--primary-color);
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.file-input-label:hover {
+    background-color: rgba(225, 48, 108, 0.1);
+    transform: scale(1.02);
+}
+
+.file-input-label .upload-icon {
+    margin-right: 10px;
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+#file-input {
+    display: none;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #333;
+    color: var(--text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: var(--gradient-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.records-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.record {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.record:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.record h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.record p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.record button {
+    margin-top: 10px;
+    background: var(--gradient-color);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.record button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.message-box {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.message-box.success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.message-box.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 500px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--secondary-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+    }
+}
